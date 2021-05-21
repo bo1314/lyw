@@ -1,0 +1,37 @@
+{
+  "id": "2563287",
+  "name": "lyw",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "旅游网",
+  "glyphs": [
+    {
+      "icon_id": "2746603",
+      "name": "地球",
+      "font_class": "diqiu",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "6119218",
+      "name": "下-三角",
+      "font_class": "below-s",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "6275359",
+      "name": "定位",
+      "font_class": "icon-test",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "7708046",
+      "name": "左箭头",
+      "font_class": "zuojiantou",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    }
+  ]
+}
