@@ -14,16 +14,18 @@
     </Carousel>
     <!-- 滑动菜单 -->
    <van-swipe class="menu" indicator-color="@maincolor">
-      <van-swipe-item>
-        <div class="menu-item">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div
-          >
+      <!-- <van-swipe-item class="menu-item">
+        <div class="menu-list" v-for="value in menuList" :key="value.id">
+          <img :src="value.img">
+          <p>{{value.title}}</p>
+        </div>
+      </van-swipe-item> -->
+      <van-swipe-item class="menu-item" v-for="(item,i) in page" :key="i">
+        <div class="menu-list" v-for="value in item" :key="value.id">
+          <img :src="value.img">
+          <p>{{value.title}}</p>
         </div>
       </van-swipe-item>
-      <van-swipe-item>2</van-swipe-item>
     </van-swipe>
 
   </div>
@@ -50,6 +52,90 @@ export default {
         require('../../assets/images/86a4e97f1b9be684f1ce8bacd7b80293.jpeg'),
         require('../../assets/images/86a4e97f1b9be684f1ce8bacd7b80293.jpeg'),
       ],
+      menuList:[
+        {
+          id:"01",
+          img:require('../../assets/images/hotel.png'),
+          title:"景点门票"
+        },
+        {
+          id:"02",
+          img:require('../../assets/images/hotel.png'),
+          title:"必游榜单"
+        },
+        {
+          id:"03",
+          img:require('../../assets/images/hotel.png'),
+          title:"夏日玩水"
+        },
+        {
+          id:"04",
+          img:require('../../assets/images/hotel.png'),
+          title:"主题乐园"
+        },
+        {
+          id:"05",
+          img:require('../../assets/images/hotel.png'),
+          title:"动植物园"
+        },
+        {
+          id:"06",
+          img:require('../../assets/images/hotel.png'),
+          title:"故宫"
+        },
+        {
+          id:"07",
+          img:require('../../assets/images/hotel.png'),
+          title:"一日游"
+        },
+        {
+          id:"08",
+          img:require('../../assets/images/hotel.png'),
+          title:"公园"
+        },
+        {
+          id:"09",
+          img:require('../../assets/images/hotel.png'),
+          title:"游乐园"
+        },
+        {
+          id:"10",
+          img:require('../../assets/images/hotel.png'),
+          title:"全部玩乐"
+        },
+        {
+          id:"11",
+          img:require('../../assets/images/hotel.png'),
+          title:"夏令营"
+        },
+        
+        
+      ]
+      
+    }
+  },
+  //计算属性
+  computed:{
+    /*
+      [8] 第一页
+      [2] 第二页
+    */
+    page(){
+      let pages = []
+      this.menuList.forEach((item,index)=>{
+        //index 此时就是0 1 2 3 ~ 9  
+        //每个索引除以8 0除8 1除8 2除8 3除8 一直到 8除8 都是0.xx 
+        // 9之后的数 除8 都是1.xxx
+        let idx = Math.floor(index/8)//Math.floor向下取整
+        //此时除以8 向下取整 就可以得到 8个0  2个1
+        if(!pages[idx]) pages[idx] = []
+        console.log(!pages[idx]);
+        
+        pages[idx].push(item)
+        
+      })
+      console.log(pages);
+      return pages;
     }
   }
 }
@@ -57,7 +143,6 @@ export default {
 
 <style lang="less" scoped>
   @maincolor:#00bcd4;
-
 
   .head-search{
     background-color: white;
@@ -75,12 +160,30 @@ export default {
   }
 
   // 滑动菜单
-  .menu .van-swipe-item {
-    color: #fff;
-    font-size: 20px;
-    line-height: 150px;
-    text-align: center;
-    background-color: #39a9ed;
-    margin-top: 20px;
+  .menu{}
+  .menu-item{
+    width: 100%;
+    height: 19rem;
+    display: flex;
+    flex-wrap: wrap; 
+  }
+  .menu-list{
+    width: 25%;
+    height: 9rem;
+
+      img{
+        display: block;
+        width: 4.5rem;
+        height: 4.5rem;
+        margin: 8px auto;
+      }
+      p{
+        line-height: 20px;
+        height: 20px;
+        font-size: 14px;
+        text-align:center;
+        margin-top: 8px;
+      }
+
   }
 </style>
