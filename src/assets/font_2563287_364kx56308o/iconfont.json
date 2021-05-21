@@ -6,6 +6,13 @@
   "description": "旅游网",
   "glyphs": [
     {
+      "icon_id": "19685922",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e9f2",
+      "unicode_decimal": 59890
+    },
+    {
       "icon_id": "2746603",
       "name": "地球",
       "font_class": "diqiu",

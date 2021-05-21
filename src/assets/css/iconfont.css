@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2563287 */
-  src: url('../font/iconfont.woff2?t=1621584630230') format('woff2'),
-       url('../font/iconfont.woff?t=1621584630230') format('woff'),
-       url('../font/iconfont.ttf?t=1621584630230') format('truetype');
+  src: url('../font/iconfont.woff2?t=1621587857577') format('woff2'),
+       url('../font/iconfont.woff?t=1621587857577') format('woff'),
+       url('../font/iconfont.ttf?t=1621587857577') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sousuo:before {
+  content: "\e9f2";
 }
 
 .icon-diqiu:before {

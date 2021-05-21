@@ -15,6 +15,13 @@ FastClick.attach(document.body);
 //引入 图标css
 import './assets/css/iconfont.css'
 
+
+//vant组件
+import Vant from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Vant);
+
+
 new Vue({
   router,
   store,
