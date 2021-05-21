@@ -14,6 +14,7 @@ FastClick.attach(document.body);
 
 //引入 图标css
 import './assets/css/iconfont.css'
+// import './assets/images/'
 
 
 //vant组件
@@ -21,6 +22,13 @@ import Vant from 'vant';
 import 'vant/lib/index.css';
 Vue.use(Vant);
 
+//Lazyload 懒加载
+import { Lazyload } from 'vant';
+Vue.use(Lazyload);
+// 注册时可以配置额外的选项
+Vue.use(Lazyload, {
+  lazyComponent: true,
+});
 
 new Vue({
   router,
