@@ -14,7 +14,7 @@
         display: flex;
         background-color: #fff;
         position: relative;
-        margin-top: 1.5rem;
+        margin-top: 1.2rem;
         
     }
     .menpiao-item{
