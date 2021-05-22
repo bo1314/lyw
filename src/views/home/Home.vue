@@ -28,6 +28,8 @@
     <menpiao></menpiao>
     <!-- 热门榜单 -->
     <hot></hot>
+
+    <like></like>
   </div>
   
 </template>
@@ -40,13 +42,14 @@ import Carousel from '@/components/carousel.vue'
 import location from './pages/location.vue'
 import menpiao from './pages/menpiao.vue'
 import hot from './pages/hot.vue'
+import like from './pages/like.vue'
 
 
 export default {
   name: 'Home',
   components: {
     //子组件 某个部分 或者是公共组件🚩
-    Head,Carousel,location,menpiao,hot
+    Head,Carousel,location,menpiao,hot,like
   },
   data(){
     return {
