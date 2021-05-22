@@ -12,14 +12,9 @@
           <img v-lazy="image" style="max-width:100%" />
         </van-swipe-item>
     </Carousel>
+
     <!-- 滑动菜单 -->
    <van-swipe class="menu" indicator-color="@maincolor">
-      <!-- <van-swipe-item class="menu-item">
-        <div class="menu-list" v-for="value in menuList" :key="value.id">
-          <img :src="value.img">
-          <p>{{value.title}}</p>
-        </div>
-      </van-swipe-item> -->
       <van-swipe-item class="menu-item" v-for="(item,i) in page" :key="i">
         <div class="menu-list" v-for="value in item" :key="value.id">
           <img :src="value.img">
@@ -27,7 +22,12 @@
         </div>
       </van-swipe-item>
     </van-swipe>
-
+    <!--定位失败 玩水季  -->
+    <location></location>
+    <!-- 门票 -->
+    <menpiao></menpiao>
+    <!-- 热门榜单 -->
+    <hot></hot>
   </div>
   
 </template>
@@ -37,13 +37,16 @@
 //引入子组件 或者是引入公共组件↓🚩
 import Head  from '@/components/head.vue'
 import Carousel from '@/components/carousel.vue'
+import location from './pages/location.vue'
+import menpiao from './pages/menpiao.vue'
+import hot from './pages/hot.vue'
 
 
 export default {
   name: 'Home',
   components: {
     //子组件 某个部分 或者是公共组件🚩
-    Head,Carousel
+    Head,Carousel,location,menpiao,hot
   },
   data(){
     return {
@@ -143,7 +146,9 @@ export default {
 
 <style lang="less" scoped>
   @maincolor:#00bcd4;
-
+  .home{
+    background-color: #f5f5f5;
+  }
   .head-search{
     background-color: white;
     line-height: 3rem;
@@ -160,12 +165,12 @@ export default {
   }
 
   // 滑动菜单
-  .menu{}
   .menu-item{
     width: 100%;
     height: 19rem;
     display: flex;
     flex-wrap: wrap; 
+    background-color: #fff;
   }
   .menu-list{
     width: 25%;
