@@ -28,10 +28,12 @@
     <menpiao></menpiao>
     <!-- 热门榜单 -->
     <hot :hotlist="hotlist"></hot>
+    
 
     <like :likelist="likelist"></like>
 
     <vacation :vacationdata='vacationdata'></vacation>
+    
   </div>
   
 </template>
@@ -47,6 +49,7 @@ import hot from './pages/hot.vue'
 import like from './pages/like.vue'
 import vacation from './pages/vacation.vue'
 
+import {mapState} from 'vuex'
 
 export default {
   name: 'Home',
@@ -61,86 +64,100 @@ export default {
       hotlist:[],
       likelist:[],
       vacationdata:[],
-      images:[
-        require('../../assets/images/5f2a01d86107e0a892f7d6398375b219.jpeg'),
-        require('../../assets/images/86a4e97f1b9be684f1ce8bacd7b80293.jpeg'),
-        require('../../assets/images/86a4e97f1b9be684f1ce8bacd7b80293.jpeg'),
-      ],
-      menuList:[
-        {
-          id:"01",
-          img:require('../../assets/images/hotel.png'),
-          title:"景点门票"
-        },
-        {
-          id:"02",
-          img:require('../../assets/images/hotel.png'),
-          title:"必游榜单"
-        },
-        {
-          id:"03",
-          img:require('../../assets/images/hotel.png'),
-          title:"夏日玩水"
-        },
-        {
-          id:"04",
-          img:require('../../assets/images/hotel.png'),
-          title:"主题乐园"
-        },
-        {
-          id:"05",
-          img:require('../../assets/images/hotel.png'),
-          title:"动植物园"
-        },
-        {
-          id:"06",
-          img:require('../../assets/images/hotel.png'),
-          title:"故宫"
-        },
-        {
-          id:"07",
-          img:require('../../assets/images/hotel.png'),
-          title:"一日游"
-        },
-        {
-          id:"08",
-          img:require('../../assets/images/hotel.png'),
-          title:"公园"
-        },
-        {
-          id:"09",
-          img:require('../../assets/images/hotel.png'),
-          title:"游乐园"
-        },
-        {
-          id:"10",
-          img:require('../../assets/images/hotel.png'),
-          title:"全部玩乐"
-        },
-        {
-          id:"11",
-          img:require('../../assets/images/hotel.png'),
-          title:"夏令营"
-        },
-      ],
+      // images:[
+      //   require('../../assets/images/5f2a01d86107e0a892f7d6398375b219.jpeg'),
+      //   require('../../assets/images/86a4e97f1b9be684f1ce8bacd7b80293.jpeg'),
+      //   require('../../assets/images/86a4e97f1b9be684f1ce8bacd7b80293.jpeg'),
+      // ],
+      // menuList:[
+      //   {
+      //     id:"01",
+      //     img:require('../../assets/images/hotel.png'),
+      //     title:"景点门票"
+      //   },
+      //   {
+      //     id:"02",
+      //     img:require('../../assets/images/hotel.png'),
+      //     title:"必游榜单"
+      //   },
+      //   {
+      //     id:"03",
+      //     img:require('../../assets/images/hotel.png'),
+      //     title:"夏日玩水"
+      //   },
+      //   {
+      //     id:"04",
+      //     img:require('../../assets/images/hotel.png'),
+      //     title:"主题乐园"
+      //   },
+      //   {
+      //     id:"05",
+      //     img:require('../../assets/images/hotel.png'),
+      //     title:"动植物园"
+      //   },
+      //   {
+      //     id:"06",
+      //     img:require('../../assets/images/hotel.png'),
+      //     title:"故宫"
+      //   },
+      //   {
+      //     id:"07",
+      //     img:require('../../assets/images/hotel.png'),
+      //     title:"一日游"
+      //   },
+      //   {
+      //     id:"08",
+      //     img:require('../../assets/images/hotel.png'),
+      //     title:"公园"
+      //   },
+      //   {
+      //     id:"09",
+      //     img:require('../../assets/images/hotel.png'),
+      //     title:"游乐园"
+      //   },
+      //   {
+      //     id:"10",
+      //     img:require('../../assets/images/hotel.png'),
+      //     title:"全部玩乐"
+      //   },
+      //   {
+      //     id:"11",
+      //     img:require('../../assets/images/hotel.png'),
+      //     title:"夏令营"
+      //   },
+      // ],
       
       
     }
   },
+  methods:{
+    fun(){
+      this.$http.get('/mock/datahome.json')
+      .then((res)=>{
+        const datas = res.data.data;
+        // const filter = datas.((item)=>item.city == this.city)
+        // console.log(datas.filter((item)=>item.city == this.city));
+        // this.gonggao = res.data.filter((item)=> item.leibies[0] == '60a3c31cc8f80a1b8cd27bc4' )
+        datas.forEach((item,index)=>{
+          if(item.city == this.city){
+            this.imagess= item.images
+            this.menuLists= item.menuList
+            this.hotlist= item.hotlist
+            this.likelist= item.likelist
+            this.vacationdata = item.vacationdata
+          }
+        })
+        
+    })
+    }
+  },
  
   mounted(){
-    this.$http.get('/mock/datahome.json')
-    .then((res)=>{
-      const datas = res.data.data[0]
-      this.imagess= datas.images
-      this.menuLists= datas.menuList
-      this.hotlist= datas.hotlist
-      this.likelist= datas.likelist
-      this.vacationdata = datas.vacationdata
-    })
+      this.fun()
   },
   //计算属性
   computed:{
+    ...mapState(['city']),
     /*
       [8] 第一页
       [2] 第二页
