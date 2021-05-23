@@ -126,6 +126,7 @@ export default {
       //     title:"夏令营"
       //   },
       // ],
+      show:""
       
       
     }
@@ -145,6 +146,7 @@ export default {
             this.hotlist= item.hotlist
             this.likelist= item.likelist
             this.vacationdata = item.vacationdata
+            this.show =this.city
           }
         })
         
@@ -153,11 +155,12 @@ export default {
   },
  
   mounted(){
-      this.fun()
+
   },
   //计算属性
   computed:{
     ...mapState(['city']),
+   
     /*
       [8] 第一页
       [2] 第二页
@@ -181,7 +184,16 @@ export default {
     }
   },
   created(){
-    // this.fun
+   
+  },
+  activated(){
+    /*
+      created()生命周期 只会触发一次；
+      activated()：在vue对象存活的情况下，进入当前存在activated()函数的页面时，一进入页面就触发；可用于初始化页面数据等
+    */
+    if(this.city != this.show){
+        this.fun()
+    }
   }
 }
 </script>

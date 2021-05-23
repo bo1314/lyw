@@ -5,7 +5,10 @@
      
     </div>
     <!-- 显示子视图 虽然APP.js是主视图首页 没错 但不推荐直接在APP.js中直接写 首页的一般都是 引入子视图 改为主要的 -->
-    <router-view/>
+    <keep-alive>
+        <router-view/>
+    </keep-alive>
+    
   </div>
 </template>
 
