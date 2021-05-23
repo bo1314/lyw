@@ -1,8 +1,7 @@
 <template>
     <div class="city">
         <city-header></city-header>
-        <city-hot :citys="citys" ></city-hot>
-        <city-sort :dq="dq"></city-sort>
+        <city-hot :citys="citys" :dq="dq"></city-hot>
     </div>
 </template>
 <script>

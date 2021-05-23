@@ -116,7 +116,7 @@
             {
                 "id":4,
                 "spell":"chifan",
-                "name":"chifan"
+                "name":"吃饭"
             },
             {
                 "id":5,
@@ -127,6 +127,91 @@
                 "id":6,
                 "spell":"chihuoguo",
                 "name":"吃火锅"
+            }
+        ],
+        "D":[
+            {
+                "id":1,
+                "spell":"ditie",
+                "name":"地铁"
+            },
+            {
+                "id":2,
+                "spell":"dishu",
+                "name":"地鼠"
+            },
+            {
+                "id":3,
+                "spell":"didong",
+                "name":"地洞"
+            }
+        ],
+        "E":[
+            {
+                "id":1,
+                "spell":"enai",
+                "name":"恩爱"
+            },
+            {
+                "id":2,
+                "spell":"endui",
+                "name":"嗯对"
+            },
+            {
+                "id":3,
+                "spell":"ewei",
+                "name":"而为"
+            }
+        ],
+        "F":[
+            {
+                "id":1,
+                "spell":"fangzi",
+                "name":"房子"
+            },
+            {
+                "id":2,
+                "spell":"fanshu",
+                "name":"翻书"
+            },
+            {
+                "id":3,
+                "spell":"fanli",
+                "name":"返利"
+            }
+        ],
+        "G":[
+            {
+                "id":1,
+                "spell":"gaotie",
+                "name":"高铁"
+            },
+            {
+                "id":2,
+                "spell":"gaoshang",
+                "name":"高尚"
+            },
+            {
+                "id":3,
+                "spell":"gaoshan",
+                "name":"高山"
+            }
+        ],
+        "H":[
+            {
+                "id":1,
+                "spell":"haoren",
+                "name":"好人"
+            },
+            {
+                "id":2,
+                "spell":"haoshu",
+                "name":"好书"
+            },
+            {
+                "id":3,
+                "spell":"haochi",
+                "name":"好吃"
             }
         ]
     }

@@ -20,7 +20,10 @@ export default {
         height: 5rem;
         background-color:@navcolor;
         width: 100vw;
-        position: relative;
+        position:  sticky;
+        top: 0;
+        left: 0;
+        z-index: 98;
     }
     .ic{
         width: 5rem;

@@ -7,7 +7,6 @@
                         {{item.name}}
                 </li>
             </ul>
-
         </div>    
     </div>
 </template>
