@@ -10,10 +10,12 @@
         </div> -->
         <slot></slot>
 
-        <div class="head-right">
+        <router-link tag="div" to="/city" class="head-right">
+        <!-- <div > -->
             北京
             <span class="iconfont">&#xe627;</span>
-        </div>
+        <!-- </div> -->
+        </router-link>
 
        
     </div>
