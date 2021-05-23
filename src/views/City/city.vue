@@ -1,8 +1,8 @@
 <template>
     <div class="city">
         <city-header></city-header>
-        <city-hot></city-hot>
-        <city-sort></city-sort>
+        <city-hot :citys="citys" ></city-hot>
+        <city-sort :dq="dq"></city-sort>
     </div>
 </template>
 <script>
@@ -14,6 +14,20 @@ import citySort from '../City/pages/sort'
 export default {
     components:{
         cityHeader,cityHot,citySort
+    },
+    data(){
+        return{
+            citys:[],
+            dq:{}
+        }
+    },
+    mounted(){
+      this.$http.get('/mock/cs.json')
+        .then((res)=>{
+            console.log(res.data);
+            this.citys = res.data.city
+            this.dq = res.data.dq
+        })
     }
 }
 </script>

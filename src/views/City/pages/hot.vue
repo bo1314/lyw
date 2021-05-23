@@ -4,16 +4,18 @@
             <van-tab title="标签 1">
                 <div class="hot-city">
                     <p class="hot-p">热门城市</p>
+
                     <ul class="hot-list">
-                        <li class="hot-li" v-for="(item,index) in city" :key="index">{{item}}</li>
+                        <li class="hot-li" v-for="(items,index) of citys" :key="index">{{items.name}}</li>
                     </ul>
                 </div>
-                <!-- <div>
-                    <p>字母排序</p>
-                    <ul>
-                        <li></li>
+
+                <div>
+                    <p class="hot-p">字母排序</p>
+                   <ul class="hot-list">
+                        <li class="hot-li" v-for="(item,index) in AZ" :key="index">{{item}}</li>
                     </ul>
-                </div> -->
+                </div>
             </van-tab>
             <van-tab title="标签 2">内容 2</van-tab>
         </van-tabs>
@@ -21,13 +23,16 @@
 </template>
 
 <script>
+
 export default {
+    props:['citys'],
     data() {
         return {
             active: 0,
-            city:["北京","上海","三亚","香港","杭州","广州","成都","深圳","江苏","桂林","西安","厦门",]
+            AZ:["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",],
         };
     },
+  
 }
 </script>
 
@@ -44,10 +49,11 @@ export default {
         
     }
     .hot-list{
-        background: white;
+       
         overflow: hidden;
     }
     .hot-li{
+        background: white;
         width: 33.12%;
         text-align: center;
         height: 4rem;
