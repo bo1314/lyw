@@ -23,7 +23,8 @@
                 <div class="list-b" v-for="(val,index) in dq" :key="val.id">
                     <div class="list-nav" :ref="index">{{index}}</div>
                     <ul class="list-ul">
-                        <li class="list-li" v-for="item in val" :key="item.id">
+                        <li class="list-li" v-for="item in val" :key="item.id" 
+                        @click="changecity(item.name)">
                                 {{item.name}}
                         </li>
                     </ul>
@@ -36,6 +37,7 @@
 
 <script>
 // import BScroll from 'better-scroll'
+import {mapMutations} from 'vuex'
 export default {
     props:['citys','dq'],
     data() {
@@ -47,6 +49,7 @@ export default {
     mounted(){
         // let container = this.$refs['container']
         // this.scroll = new BScroll(container)
+        console.log(this.$parent);
     },
     methods:{
         change(index){//将dq中的对象 键 index索引拿了过来 此索引是 ABCD 对象的键
@@ -60,8 +63,11 @@ export default {
             */
         },
         changecity(name){
-            alert(name)
-        }
+            this.$router.push('/')
+            //组件之间的传值 vuex
+            this.changeCity(name)
+        },
+        ...mapMutations(['changeCity'])
     },
 
   
