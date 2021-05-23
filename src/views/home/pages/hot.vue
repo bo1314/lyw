@@ -16,65 +16,66 @@
 
 <script>
 export default {
+    props:['hotlist'],
     data(){
         return {
-            hotlist:[
-                {
-                    id:"01",
-                    img:require('../../../assets/images/111.png'),
-                    title:"故宫",
-                    jg:12
-                },
-                {
-                    id:"02",
-                    img:require('../../../assets/images/111.png'),
-                    title:"故宫",
-                    jg:12
+            // hotlist:[
+            //     {
+            //         id:"01",
+            //         img:require('../../../assets/images/111.png'),
+            //         title:"故宫",
+            //         jg:12
+            //     },
+            //     {
+            //         id:"02",
+            //         img:require('../../../assets/images/111.png'),
+            //         title:"故宫",
+            //         jg:12
                     
-                },
-                  {
-                    id:"03",
-                    img:require('../../../assets/images/111.png'),
-                    title:"故宫",
-                    jg:12
-                },
-                  {
-                    id:"04",
-                    img:require('../../../assets/images/111.png'),
-                    title:"故宫",
-                    jg:12
-                },
-                  {
-                    id:"05",
-                    img:require('../../../assets/images/111.png'),
-                    title:"故宫",
-                    jg:12
-                },
-                  {
-                    id:"06",
-                    img:require('../../../assets/images/111.png'),
-                    title:"故宫",
-                    jg:12
-                },
-                  {
-                    id:"07",
-                    img:require('../../../assets/images/111.png'),
-                    title:"故宫",
-                    jg:12
-                },
-                  {
-                    id:"08",
-                    img:require('../../../assets/images/111.png'),
-                    title:"故宫",
-                    jg:12
-                },
-                  {
-                    id:"09",
-                    img:require('../../../assets/images/111.png'),
-                    title:"故宫",
-                    jg:12
-                }, 
-            ]
+            //     },
+            //       {
+            //         id:"03",
+            //         img:require('../../../assets/images/111.png'),
+            //         title:"故宫",
+            //         jg:12
+            //     },
+            //       {
+            //         id:"04",
+            //         img:require('../../../assets/images/111.png'),
+            //         title:"故宫",
+            //         jg:12
+            //     },
+            //       {
+            //         id:"05",
+            //         img:require('../../../assets/images/111.png'),
+            //         title:"故宫",
+            //         jg:12
+            //     },
+            //       {
+            //         id:"06",
+            //         img:require('../../../assets/images/111.png'),
+            //         title:"故宫",
+            //         jg:12
+            //     },
+            //       {
+            //         id:"07",
+            //         img:require('../../../assets/images/111.png'),
+            //         title:"故宫",
+            //         jg:12
+            //     },
+            //       {
+            //         id:"08",
+            //         img:require('../../../assets/images/111.png'),
+            //         title:"故宫",
+            //         jg:12
+            //     },
+            //       {
+            //         id:"09",
+            //         img:require('../../../assets/images/111.png'),
+            //         title:"故宫",
+            //         jg:12
+            //     }, 
+            // ]
         }
     }
 }

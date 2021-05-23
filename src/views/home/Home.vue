@@ -8,7 +8,7 @@
     </Head>
     <!-- 轮播 -->
     <Carousel>
-        <van-swipe-item v-for="(image, index) in images" :key="index">
+        <van-swipe-item v-for="(image, index) in imagess" :key="index">
           <img v-lazy="image" style="max-width:100%" />
         </van-swipe-item>
     </Carousel>
@@ -27,9 +27,11 @@
     <!-- 门票 -->
     <menpiao></menpiao>
     <!-- 热门榜单 -->
-    <hot></hot>
+    <hot :hotlist="hotlist"></hot>
 
-    <like></like>
+    <like :likelist="likelist"></like>
+
+    <vacation :vacationdata='vacationdata'></vacation>
   </div>
   
 </template>
@@ -43,16 +45,22 @@ import location from './pages/location.vue'
 import menpiao from './pages/menpiao.vue'
 import hot from './pages/hot.vue'
 import like from './pages/like.vue'
+import vacation from './pages/vacation.vue'
 
 
 export default {
   name: 'Home',
   components: {
     //子组件 某个部分 或者是公共组件🚩
-    Head,Carousel,location,menpiao,hot,like
+    Head,Carousel,location,menpiao,hot,like,vacation
   },
   data(){
     return {
+      imagess:[],
+      menuLists:[],
+      hotlist:[],
+      likelist:[],
+      vacationdata:[],
       images:[
         require('../../assets/images/5f2a01d86107e0a892f7d6398375b219.jpeg'),
         require('../../assets/images/86a4e97f1b9be684f1ce8bacd7b80293.jpeg'),
@@ -114,11 +122,22 @@ export default {
           img:require('../../assets/images/hotel.png'),
           title:"夏令营"
         },
-        
-        
-      ]
+      ],
+      
       
     }
+  },
+ 
+  mounted(){
+    this.$http.get('/mock/datahome.json')
+    .then((res)=>{
+      const datas = res.data.data[0]
+      this.imagess= datas.images
+      this.menuLists= datas.menuList
+      this.hotlist= datas.hotlist
+      this.likelist= datas.likelist
+      this.vacationdata = datas.vacationdata
+    })
   },
   //计算属性
   computed:{
@@ -128,7 +147,7 @@ export default {
     */
     page(){
       let pages = []
-      this.menuList.forEach((item,index)=>{
+      this.menuLists.forEach((item,index)=>{
         //index 此时就是0 1 2 3 ~ 9  
         //每个索引除以8 0除8 1除8 2除8 3除8 一直到 8除8 都是0.xx 
         // 9之后的数 除8 都是1.xxx
@@ -143,6 +162,9 @@ export default {
       console.log(pages);
       return pages;
     }
+  },
+  created(){
+    // this.fun
   }
 }
 </script>

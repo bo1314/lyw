@@ -21,83 +21,84 @@
 </template>
 <script>
 export default {
+    props:['likelist'],
     data(){
         return{
-            likelist:[
-                {
-                    id:"01",
-                    img:require('../../../assets/images/111.png'),
-                    name:"金海湖风景区",
-                    num:"1333",
-                    jg:"12",
-                    dq:'北京'
-                },
-                {
-                    id:"02",
-                    img:require('../../../assets/images/111.png'),
-                    name:"金海湖风景区",
-                    num:"1333",
-                    jg:"12",
-                    dq:'北京'
-                },
-                {
-                    id:"03",
-                    img:require('../../../assets/images/111.png'),
-                    name:"金海湖风景区",
-                    num:"1333",
-                    jg:"12",
-                    dq:'北京'
-                },
-                {
-                    id:"04",
-                    img:require('../../../assets/images/111.png'),
-                    name:"金海湖风景区",
-                    num:"1333",
-                    jg:"12",
-                    dq:'北京'
-                },
-                {
-                    id:"05",
-                    img:require('../../../assets/images/111.png'),
-                    name:"金海湖风景区",
-                    num:"1333",
-                    jg:"12",
-                    dq:'北京'
-                },
-                {
-                    id:"06",
-                    img:require('../../../assets/images/111.png'),
-                    name:"金海湖风景区",
-                    num:"1333",
-                    jg:"12",
-                    dq:'北京'
-                },
-                {
-                    id:"07",
-                    img:require('../../../assets/images/111.png'),
-                    name:"金海湖风景区",
-                    num:"1333",
-                    jg:"12",
-                    dq:'北京'
-                },
-                {
-                    id:"08",
-                    img:require('../../../assets/images/111.png'),
-                    name:"金海湖风景区",
-                    num:"1333",
-                    jg:"12",
-                    dq:'北京'
-                },
-                {
-                    id:"09",
-                    img:require('../../../assets/images/111.png'),
-                    name:"金海湖风景区",
-                    num:"1333",
-                    jg:"12",
-                    dq:'北京'
-                },
+            // likelist:[
+            //     {
+            //         id:"01",
+            //         img:require('../../../assets/images/111.png'),
+            //         name:"金海湖风景区",
+            //         num:"1333",
+            //         jg:"12",
+            //         dq:'北京'
+            //     },
+            //     {
+            //         id:"02",
+            //         img:require('../../../assets/images/111.png'),
+            //         name:"金海湖风景区",
+            //         num:"1333",
+            //         jg:"12",
+            //         dq:'北京'
+            //     },
+            //     {
+            //         id:"03",
+            //         img:require('../../../assets/images/111.png'),
+            //         name:"金海湖风景区",
+            //         num:"1333",
+            //         jg:"12",
+            //         dq:'北京'
+            //     },
+            //     {
+            //         id:"04",
+            //         img:require('../../../assets/images/111.png'),
+            //         name:"金海湖风景区",
+            //         num:"1333",
+            //         jg:"12",
+            //         dq:'北京'
+            //     },
+            //     {
+            //         id:"05",
+            //         img:require('../../../assets/images/111.png'),
+            //         name:"金海湖风景区",
+            //         num:"1333",
+            //         jg:"12",
+            //         dq:'北京'
+            //     },
+            //     {
+            //         id:"06",
+            //         img:require('../../../assets/images/111.png'),
+            //         name:"金海湖风景区",
+            //         num:"1333",
+            //         jg:"12",
+            //         dq:'北京'
+            //     },
+            //     {
+            //         id:"07",
+            //         img:require('../../../assets/images/111.png'),
+            //         name:"金海湖风景区",
+            //         num:"1333",
+            //         jg:"12",
+            //         dq:'北京'
+            //     },
+            //     {
+            //         id:"08",
+            //         img:require('../../../assets/images/111.png'),
+            //         name:"金海湖风景区",
+            //         num:"1333",
+            //         jg:"12",
+            //         dq:'北京'
+            //     },
+            //     {
+            //         id:"09",
+            //         img:require('../../../assets/images/111.png'),
+            //         name:"金海湖风景区",
+            //         num:"1333",
+            //         jg:"12",
+            //         dq:'北京'
+            //     },
 
-            ]
+            // ]
         }
     }
 }
@@ -106,7 +107,6 @@ export default {
     .like-top{
         width: 100%;
         height: 2rem;
-       
         font-size: 18px;
         line-height: 2rem;
     }

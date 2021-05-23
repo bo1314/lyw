@@ -30,6 +30,10 @@ Vue.use(Lazyload, {
   lazyComponent: true,
 });
 
+import http  from './http'
+Vue.prototype.$http = http
+
+
 new Vue({
   router,
   store,
