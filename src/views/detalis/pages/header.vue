@@ -1,7 +1,7 @@
 <template>
    <div class="header">
         <div class="iconfont ic" @click="onClickLeft">&#xe620;</div>
-        <div class="title">城市选择</div>
+        <div class="title">详情页</div>
     </div>
 </template>
 <script>

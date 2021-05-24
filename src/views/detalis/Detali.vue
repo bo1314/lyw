@@ -1,7 +1,8 @@
 <template>
     <div class="detali">
-        <!-- <Header></Header> -->
+        <Header></Header>
         <Banner></Banner>
+        <div class="s">ssss</div>
     </div>
 </template>
 
@@ -18,9 +19,14 @@ export default {
 
         }
     },
+    activated(){
+        document.documentElement.scrollTop = 0
+    }
 }
 </script>
 
 <style lang="less" scoped>
-
+    .s{
+        height: 2000px;
+    }
 </style>

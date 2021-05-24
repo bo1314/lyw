@@ -9,18 +9,8 @@
             </div>
         </div>
         <div class="img-swiper" v-show="imgSwiper" @click="hideSwiper">
-            <van-swipe>
-                <van-swipe-item v-for="item in imgs" :key="item.id">
-                    <img :src="item.img" alt="" class="img">
-                </van-swipe-item>
-            </van-swipe>
+            <img src="@/assets/images/4e93fc8a8d1638bc7919d6842260b3aa.jpeg" alt="">
         </div>
-        <!-- <van-swipe>
-                <van-swipe-item v-for="item in imgs" :key="item.id">
-                    <img :src="item.img" alt="">
-                </van-swipe-item>
-        </van-swipe> -->
-
     </div>
 </template>
 <script>
@@ -85,16 +75,8 @@ export default {
         justify-content: center;
         align-items: center;
     }
-    .img-swiper .img{
-        width: 100%;
+    .img-swiper img{
+        max-width: 100%;
     }
 
-    .custom-indicator {
-        position: absolute;
-        right: 5px;
-        bottom: 5px;
-        padding: 2px 5px;
-        font-size: 12px;
-        background: rgba(0, 0, 0, 0.1);
-    }
 </style>
