@@ -4,7 +4,8 @@
             &#xe689;
             猜你喜欢
         </div>
-        <div class="like-body" v-for="item in likelist" :key="item.id">
+        <div class="like-body" v-for="item in likelist" :key="item.id"
+        @click="tiaozhuan()">
             <div class="like-left">
                 <img :src="item.img" alt="">
             </div>
@@ -99,6 +100,11 @@ export default {
             //     },
 
             // ]
+        }
+    },
+    methods:{
+        tiaozhuan(){
+            this.$router.push('/detali')
         }
     }
 }

@@ -1,46 +1,44 @@
 <template>
-    <div class="header">
+   <div class="header">
         <div class="iconfont ic" @click="onClickLeft">&#xe620;</div>
         <div class="title">城市选择</div>
     </div>
 </template>
-
 <script>
 export default {
-    methods: {
-        onClickLeft() {
-            this.$router.push('/')
-        },
+    data() {
+        return{
+
+        }
     },
+    methods:{
+        onClickLeft(){
+            this.$router.push('/')
+        }
+    }
 }
 </script>
 <style lang="less" scoped>
-    @navcolor:#00bcd4;
     .header{
+        width: 100%;
         height: 5rem;
         background-color:#00bcd4;
-        width: 100vw;
-        position:  sticky;
-        top: 0;
-        left: 0;
-        z-index: 98;
     }
     .ic{
         width: 5rem;
         height: 5rem;
         line-height: 5rem;
-        text-align: center;
         position: absolute;
         top: 0;
         left: 0;
-         color: white;
-         font-size: 18px;
+        text-align: center;
+        color: white;
     }
     .title{
         height: 5rem;
         line-height: 5rem;
-        font-size: 16px;
         text-align: center;
+        font-size: 16px;
         color: white;
     }
 </style>

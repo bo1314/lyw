@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/home/Home.vue'
 import City from '../views/City/city.vue'
+import Detali from '../views/detalis/Detali.vue'
 
 
 Vue.use(VueRouter)
@@ -25,7 +26,11 @@ const routes = [
   //   // which is lazy-loaded when the route is visited.
   //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   // }
-
+  {
+    path:"/detali",
+    name:"Detali",
+    component:Detali
+  }
   
 ]
 
